@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "Product Catalogue API",
+    "description": "Strapi product catalogue REST API collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:1337"
+    },
+    {
+      "key": "product_slug",
+      "value": "demo-product-1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get all products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?pagination[page]=1&pagination[pageSize]=20&sort[0]=updatedAt:desc&populate[0]=images&populate[1]=category&populate[2]=brand",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [
+                { "key": "pagination[page]", "value": "1" },
+                { "key": "pagination[pageSize]", "value": "20" },
+                { "key": "sort[0]", "value": "updatedAt:desc" },
+                { "key": "populate[0]", "value": "images" },
+                { "key": "populate[1]", "value": "category" },
+                { "key": "populate[2]", "value": "brand" }
+              ]
+            },
+            "description": "Example response: {\n  \"data\": [{\"id\":1,\"attributes\":{\"name\":\"Demo Product 1\",\"slug\":\"demo-product-1\"}}],\n  \"meta\": {\"pagination\": {\"page\":1,\"pageSize\":20}}\n}"
+          }
+        },
+        {
+          "name": "Get product by slug",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products/{{product_slug}}?populate=*",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "{{product_slug}}"],
+              "query": [
+                { "key": "populate", "value": "*" }
+              ]
+            },
+            "description": "Example response: {\n  \"data\": {\"id\":1,\"attributes\":{\"name\":\"Demo Product 1\",\"slug\":\"demo-product-1\",\"price\":\"49.99\"}}\n}"
+          }
+        },
+        {
+          "name": "Filtered products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/products?filters[category][slug][$eq]=laptops&filters[brand][slug][$eq]=novatech&filters[price][$gte]=100&filters[price][$lte]=1200&pagination[page]=1&pagination[pageSize]=12&sort[0]=price:asc&populate[0]=category&populate[1]=brand",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products"],
+              "query": [
+                { "key": "filters[category][slug][$eq]", "value": "laptops" },
+                { "key": "filters[brand][slug][$eq]", "value": "novatech" },
+                { "key": "filters[price][$gte]", "value": "100" },
+                { "key": "filters[price][$lte]", "value": "1200" },
+                { "key": "pagination[page]", "value": "1" },
+                { "key": "pagination[pageSize]", "value": "12" },
+                { "key": "sort[0]", "value": "price:asc" },
+                { "key": "populate[0]", "value": "category" },
+                { "key": "populate[1]", "value": "brand" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/categories?populate[parent]=*&populate[seo]=*",
+              "host": ["{{base_url}}"],
+              "path": ["api", "categories"],
+              "query": [
+                { "key": "populate[parent]", "value": "*" },
+                { "key": "populate[seo]", "value": "*" }
+              ]
+            },
+            "description": "Example response: {\"data\":[{\"id\":1,\"attributes\":{\"name\":\"Electronics\",\"slug\":\"electronics\"}}]}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Brands",
+      "item": [
+        {
+          "name": "Get brands",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/brands?populate=logo",
+              "host": ["{{base_url}}"],
+              "path": ["api", "brands"],
+              "query": [
+                { "key": "populate", "value": "logo" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
