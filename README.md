@@ -20,7 +20,7 @@ Clients (Next.js / mobile / partner apps)
    |      |      \
    |      |       +--> External Services (Meilisearch / Cloudinary)
    |      |
-   |      +----------> Helpers (constants/utils)
+   |      +----------> Helpers (constants)
    |
    +-----------------> PostgreSQL
 ```
@@ -29,10 +29,6 @@ Clients (Next.js / mobile / partner apps)
 
 ```text
 .
-├── api/
-│   ├── controllers/
-│   ├── middlewares/
-│   └── routes/
 ├── config/
 │   ├── admin.js
 │   ├── api.js
@@ -46,8 +42,7 @@ Clients (Next.js / mobile / partner apps)
 ├── docs/
 │   └── postman/
 ├── helpers/
-│   ├── constants/
-│   └── utils/
+│   └── constants/
 ├── scripts/
 ├── services/
 │   └── external/
