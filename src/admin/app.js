@@ -3,6 +3,16 @@ export default {
     head: {
       title: 'HK Company Admin Panel',
     },
+    auth: {
+      logo: null,
+    },
+    menu: {
+      logo: null,
+    },
+    tutorials: false,
+    notifications: {
+      releases: false,
+    },
     theme: {
       light: {
         colors: {
@@ -31,8 +41,13 @@ export default {
     },
     translations: {
       en: {
+        'global.appName': 'HK Company',
         'Auth.form.welcome.title': 'Welcome to HK Company Admin Panel',
         'Auth.form.welcome.subtitle': 'Log in to manage HK Company content',
+        'Auth.form.button.login.strapi': 'Log in',
+        'app.components.LeftMenu.navbrand.title': 'HK Company',
+        'HomePage.header.title': 'HK Company Dashboard',
+        'HomePage.header.subtitle': 'Manage products, clients, and operations in one place.',
       },
     },
   },
