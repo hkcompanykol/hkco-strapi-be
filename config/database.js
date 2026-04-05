@@ -28,6 +28,11 @@ module.exports = ({ env }) => {
                     min: env.int("DATABASE_POOL_MIN", 2),
                     max: env.int("DATABASE_POOL_MAX", 20),
                 },
+                schema: env("DATABASE_SCHEMA", "public"),
+            },
+            settings: {
+                forceMigration: true,
+                runMigrations: true,
             },
         };
     }
