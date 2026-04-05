@@ -6,7 +6,11 @@ import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import meilisearch from "strapi-plugin-meilisearch/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
+import customisations from "../../src/admin/app.js";
+
 renderAdmin(document.getElementById("strapi"), {
+  customisations,
+
   plugins: {
     "users-permissions": usersPermissions,
     meilisearch: meilisearch,
