@@ -2,4 +2,4 @@
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::user.user');
+module.exports = createCoreService('api::certificate.certificate');
