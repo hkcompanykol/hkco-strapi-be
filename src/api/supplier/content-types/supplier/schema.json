@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suppliers",
+  "info": {
+    "singularName": "supplier",
+    "pluralName": "suppliers",
+    "displayName": "Supplier",
+    "description": "Manage suppliers"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 150
+    },
+    "description": {
+      "type": "text"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

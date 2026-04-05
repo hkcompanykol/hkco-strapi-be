@@ -2,4 +2,4 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::user.user');
+module.exports = createCoreController('api::machine.machine');

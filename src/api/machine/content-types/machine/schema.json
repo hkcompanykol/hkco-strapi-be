@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "machines",
+  "info": {
+    "singularName": "machine",
+    "pluralName": "machines",
+    "displayName": "Machine",
+    "description": "Manage machines"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 150
+    },
+    "description": {
+      "type": "text"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
