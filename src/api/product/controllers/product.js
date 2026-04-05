@@ -1,13 +1,6 @@
 'use strict';
 
 const { createCoreController } = require('@strapi/strapi').factories;
-const { DEFAULT_POPULATE } = require('../../../../helpers/constants/catalog');
-
-const buildPopulateObject = () =>
-  DEFAULT_POPULATE.reduce((acc, field) => {
-    acc[field] = true;
-    return acc;
-  }, {});
 
 module.exports = createCoreController('api::product.product', ({ strapi }) => ({
   async findBySlug(ctx) {
@@ -16,7 +9,7 @@ module.exports = createCoreController('api::product.product', ({ strapi }) => ({
     const product = await strapi.entityService.findMany('api::product.product', {
       publicationState: 'live',
       filters: { slug, isActive: true },
-      populate: buildPopulateObject(),
+      populate: '*',
       limit: 1,
     });
 
