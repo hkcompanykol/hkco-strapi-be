@@ -5,15 +5,10 @@
     "singularName": "product",
     "pluralName": "products",
     "displayName": "Product",
-    "description": "Catalog products"
+    "description": "Store products"
   },
   "options": {
     "draftAndPublish": true
-  },
-  "pluginOptions": {
-    "i18n": {
-      "localized": false
-    }
   },
   "attributes": {
     "name": {
@@ -44,6 +39,7 @@
     },
     "stock": {
       "type": "integer",
+      "required": true,
       "default": 0,
       "min": 0
     },
@@ -56,29 +52,9 @@
     "images": {
       "type": "media",
       "multiple": true,
-      "allowedTypes": ["images"]
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "products"
-    },
-    "brand": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::brand.brand",
-      "inversedBy": "products"
-    },
-    "attributes": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.attribute"
-    },
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
+      "allowedTypes": [
+        "images"
+      ]
     },
     "isActive": {
       "type": "boolean",

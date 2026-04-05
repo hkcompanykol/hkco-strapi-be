@@ -2,25 +2,21 @@
   "name": "hkco-strapi-be",
   "version": "1.0.0",
   "private": true,
-  "description": "Production-ready Strapi backend for scalable product catalogue system",
+  "description": "Strapi backend with Cloudinary uploads and Meilisearch indexing",
   "scripts": {
     "develop": "strapi develop",
     "build": "strapi build",
     "start": "strapi start",
-    "strapi": "strapi",
-    "seed": "node scripts/seed.js"
+    "strapi": "strapi"
   },
   "keywords": [
     "strapi",
-    "api",
-    "product-catalogue",
-    "postgresql",
+    "cloudinary",
     "meilisearch"
   ],
   "author": "HK Company",
   "license": "MIT",
   "dependencies": {
-    "@strapi/plugin-i18n": "^4.24.0",
     "@strapi/plugin-users-permissions": "^4.24.0",
     "@strapi/strapi": "^4.24.0",
     "pg": "^8.11.3",

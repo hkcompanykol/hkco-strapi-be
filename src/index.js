@@ -4,10 +4,14 @@ const PUBLIC_ACTIONS = [
   'api::product.product.find',
   'api::product.product.findOne',
   'api::product.product.findBySlug',
-  'api::category.category.find',
-  'api::category.category.findOne',
-  'api::brand.brand.find',
-  'api::brand.brand.findOne',
+  'api::product.product.create',
+  'api::product.product.update',
+  'api::product.product.delete',
+  'api::user.user.find',
+  'api::user.user.findOne',
+  'api::user.user.create',
+  'api::user.user.update',
+  'api::user.user.delete',
 ];
 
 module.exports = {
